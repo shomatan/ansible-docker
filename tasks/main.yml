@@ -1,0 +1,8 @@
+---
+# setup/install tasks
+- include: setup-RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+- name: Ensure Docker ToolBox is installed from homebrew.
+  homebrew_cask: name=docker-toolbox state=present
+  when: "ansible_os_family == 'Darwin'"

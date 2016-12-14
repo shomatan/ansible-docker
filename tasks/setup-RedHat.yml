@@ -1,0 +1,6 @@
+---
+- name: Ensure docker is installed.
+  yum: name=docker-io enablerepo=epel state=present
+
+- name: Ensure docker is started and enabled to start at boot.
+  service: name=docker state=started enabled=yes  
