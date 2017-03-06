@@ -18,6 +18,8 @@ None.
 Dependencies
 ------------
 
+None.
+
 Example Playbook
 ----------------
 
