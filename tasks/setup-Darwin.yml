@@ -1,0 +1,5 @@
+---
+- name: Ensure Docker for Mac is installed from homebrew.
+  homebrew_cask:
+    name: docker
+    state: present
