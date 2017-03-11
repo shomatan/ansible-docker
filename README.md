@@ -1,7 +1,7 @@
 Ansible role: docker
 =========
 
-[![Build Status](https://travis-ci.org/shomatan/ansible-nginx.svg?branch=master)](https://travis-ci.org/shomatan/ansible-docker)
+[![Build Status](https://travis-ci.org/shomatan/ansible-docker.svg?branch=master)](https://travis-ci.org/shomatan/ansible-docker)
 
 Installs docker.
 
