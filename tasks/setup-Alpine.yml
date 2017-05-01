@@ -1,17 +1,13 @@
 ---
 - name: Add repository.
   lineinfile:
-    path: /etc/apk/repositories
+    dest: /etc/apk/repositories
     line: 'http://dl-cdn.alpinelinux.org/alpine/edge/community'
 
 - name: Install docker
   apk:
     name: docker
     update_cache: yes
-
-- name: Install openrc
-  apk:
-    name: openrc
 
 - name: Purge apk cache.
   command: rm -rf /var/cache/apk/*
