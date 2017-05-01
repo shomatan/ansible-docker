@@ -5,6 +5,12 @@
     enablerepo: epel
     state: present
 
+- name: Place docker client config file.
+  template:
+    src: docker.j2
+    dest: /etc/sysconfig/docker
+  notify: restart docker
+  
 - name: Ensure docker is started and enabled to start at boot.
   service: name=docker state=started enabled=yes
   when: ansible_connection != 'docker'
