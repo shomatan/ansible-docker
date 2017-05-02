@@ -13,12 +13,13 @@ None.
 Role Variables
 --------------
 
-None.
+    docker_insecure_registries: []
+
 
 Dependencies
 ------------
 
-None.
+- shomatan.repo-epel
 
 Example Playbook
 ----------------
@@ -34,3 +35,5 @@ MIT
 
 Author Information
 ------------------
+
+Shoma Nishitateno
