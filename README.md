@@ -1,4 +1,4 @@
-Ansible role: docker
+Ansible Role: Docker
 =========
 
 [![Build Status](https://travis-ci.org/shomatan/ansible-role-docker.svg?branch=master)](https://travis-ci.org/shomatan/ansible-role-docker)
