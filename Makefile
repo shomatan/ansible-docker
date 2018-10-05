@@ -24,6 +24,8 @@ check: run-container
 .PHONY: test
 test: check
 	docker exec -it $(DOCKER_CONTAINER_NAME) $(PLAYBOOK_CMD)
+	@echo "\n*********** Test ***********"
+	@docker exec -it $(DOCKER_CONTAINER_NAME) docker -v
 
 .PHONY: clean
 clean:
