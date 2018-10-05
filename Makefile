@@ -8,12 +8,13 @@ build:
 
 .PHONY: run-container
 run-container: build
-	@if `docker ps | grep -q $(DOCKER_CONTAINER_NAME)`; then \
+	@if `docker ps -a | grep -q $(DOCKER_CONTAINER_NAME)`; then \
 		make clean; \
 	fi
 	docker run -d -v ${PWD}:/test/docker \
 		--name $(DOCKER_CONTAINER_NAME) \
-		--privileged $(DOCKER_IMAGE_NAME) \
+		--privileged \
+		$(DOCKER_IMAGE_NAME) \
 		/sbin/init
 
 .PHONY: check
