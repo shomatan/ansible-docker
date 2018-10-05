@@ -1,5 +1,4 @@
 ---
-- hosts: all
-  remote_user: root
+- hosts: localhost
   roles:
-    - role_under_test
+    - docker
