@@ -1,0 +1,32 @@
+---
+- name: Install requirement packages.
+  apt:
+    name: "{{ item }}"
+    state: present
+    with_items:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg-agent
+      - software-properties-common
+
+- name: Add an Apt signing key, will not download if present
+  apt_key:
+    url: htddtps://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Add docker repository. 
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+    state: present
+
+- name: Ensure docker-ce is installed
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+    cache_valid_time: 0
+    state: present
+    with_items:
+      - docker-ce 
+      - docker-ce-cli 
+      - containerd.io
